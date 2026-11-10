@@ -1,0 +1,56 @@
+/* Дизайн-токены. Цвета и шрифты задаются только здесь. */
+:root {
+  /* Палитра: утренний туман над Днепром + кофейная ягода */
+  --mist: #dfe6e8;    /* туман — основной светлый фон */
+  --steam: #f6f9f9;   /* пар — самый светлый, «бумага» меню */
+  --river: #17313f;   /* река — тёмные секции */
+  --ink: #0e1c24;     /* чернила — текст и самый тёмный фон */
+  --cherry: #c5283d;  /* кофейная ягода — акцент, кнопки */
+  --crema: #ebc48a;   /* крема — тёплый акцент на тёмном */
+
+  /* Роли по умолчанию (светлая тема) */
+  --bg: var(--mist);
+  --fg: var(--ink);
+  --muted: rgb(14 28 36 / 0.66);
+  --rule: rgb(14 28 36 / 0.22);
+  --accent: var(--cherry);
+
+  /* Шрифты */
+  --font-display: "Sofia Sans Extra Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-text: "Literata", Georgia, "Times New Roman", serif;
+
+  /* Шкала размеров */
+  --fs-small: 0.9375rem;
+  --fs-body: clamp(1.0625rem, 0.99rem + 0.3vw, 1.25rem);
+  --fs-ui: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem);          /* навигация, кнопки (display-шрифт) */
+  --fs-h3: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+  --fs-statement: clamp(1.5rem, 1rem + 2.1vw, 3rem);
+  --fs-h2: clamp(3.5rem, 1.4rem + 9.4vw, 10.5rem);
+  --fs-hero: min(37vw, 72svh);
+
+  /* Отступы */
+  --s-1: 0.5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 2.5rem;
+  --s-5: 4rem;
+  --s-6: clamp(4.5rem, 3rem + 6vw, 9rem);    /* вертикальный ритм секций */
+  --gutter: clamp(1.25rem, 0.5rem + 3.4vw, 4rem);
+  --wrap: 96rem;
+
+  /* Движение */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.theme-dark {
+  --bg: var(--river);
+  --fg: var(--steam);
+  --muted: rgb(246 249 249 / 0.72);
+  --rule: rgb(246 249 249 / 0.24);
+  --accent: var(--crema);
+}
+
+.theme-paper {
+  --bg: var(--steam);
+}

@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="uk" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пара — кав’ярня й обсмажувальня на набережній Дніпра</title>
+  <meta name="description" content="Кав’ярня «Пара» у Дніпрі: смажимо зерно щочетверга, варимо еспресо та фільтр щодня з 7:30. Меню з цінами, адреса, столик через Telegram.">
+  <meta name="theme-color" content="#17313F">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:site_name" content="Пара">
+  <meta property="og:title" content="Пара — кав’ярня й обсмажувальня на набережній Дніпра">
+  <meta property="og:description" content="Смажимо зерно щочетверга, варимо щодня з 7:30. Напишіть у Telegram — притримаємо столик.">
+  <!-- TODO: заменить на полный адрес сайта после публикации (og:image должен быть абсолютным URL) -->
+  <meta property="og:image" content="assets/img/og.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js');
+      d.classList.add('js');
+      try {
+        var saved = localStorage.getItem('para-motion');
+        var reduce = saved ? saved === 'off' : matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduce) d.classList.add('reduced');
+      } catch (e) {}
+      // Страховка: если CDN или main.js не загрузились — показываем весь контент.
+      window.__paraFailsafe = setTimeout(function () { d.classList.add('reduced'); }, 4000);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Sofia+Sans+Extra+Condensed:wght@500;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sections.css">
+
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.1/dist/SplitText.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#about">Перейти до змісту</a>
+
+  <!-- Прелоадер: вода гріється до 100° -->
+  <div class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <span class="preloader__label">Гріємо воду</span>
+      <span class="preloader__count"><span class="preloader__num">0</span>°</span>
+    </div>
+  </div>
+
+  <!-- Кастомный курсор (включается только для мыши) -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__label"></span></div>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero theme-dark" id="top">
+    <canvas class="hero__steam" aria-hidden="true"></canvas>
+
+    <nav class="nav" aria-label="Головна навігація">
+      <a class="nav__logo" href="#top" aria-label="Пара — на початок сторінки">Пара</a>
+      <ul class="nav__list">
+        <li><a href="#about">Про нас</a></li>
+        <li><a href="#process">Процес</a></li>
+        <li><a href="#menu">Меню</a></li>
+        <li><a href="#gallery">Галерея</a></li>
+        <li><a href="#reviews">Відгуки</a></li>
+        <li><a href="#contacts">Контакти</a></li>
+      </ul>
+      <!-- TODO: заменить ссылку на настоящий Telegram -->
+      <a class="nav__cta" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати">Telegram</a>
+    </nav>
+
+    <div class="hero__body">
+      <h1 class="hero__title">
+        <span class="hero__word" aria-hidden="true"><span class="hero__char"><span>П</span></span><span class="hero__char"><span>а</span></span><span class="hero__char"><span>р</span></span><span class="hero__char"><span>а</span></span></span>
+        <span class="sr-only">Пара — кав’ярня й обсмажувальня у Дніпрі</span>
+      </h1>
+
+      <div class="hero__side">
+        <p class="hero__lead">Кав’ярня з власною обсмажувальнею на набережній Дніпра. Смажимо зерно щочетверга, варимо щодня з 7:30.</p>
+        <div class="hero__actions">
+          <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+            <span>Написати в Telegram</span>
+          </a>
+          <!-- TODO: заменить телефон -->
+          <a class="link" href="tel:+380670000000" data-cursor="Подзвонити">Подзвонити: 067 000 00 00</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- TODO: заменить адрес и часы -->
+    <dl class="hero__meta">
+      <div><dt>Де</dt><dd>Січеславська набережна, 29</dd></div>
+      <div><dt>Коли</dt><dd>пн–пт 7:30–21:00, сб–нд 9:00–22:00</dd></div>
+    </dl>
+  </header>
+
+  <main>
+    <!-- ============ БЕГУЩАЯ СТРОКА ============ -->
+    <div class="marquee" aria-label="Свіжа обсмажка щочетверга. Фільтр дня — 70 гривень. Зерно додому. Тепла кераміка.">
+      <div class="marquee__track" aria-hidden="true">
+        <div class="marquee__group">
+          <span>Свіжа обсмажка щочетверга</span>
+          <svg class="marquee__steam" viewBox="0 0 40 48"><path d="M10 44c-6-8 6-12 0-20s6-12 0-20M22 44c-6-8 6-12 0-20s6-12 0-20M34 44c-6-8 6-12 0-20s6-12 0-20"/></svg>
+          <span>Фільтр дня — 70 ₴</span>
+          <svg class="marquee__steam" viewBox="0 0 40 48"><path d="M10 44c-6-8 6-12 0-20s6-12 0-20M22 44c-6-8 6-12 0-20s6-12 0-20M34 44c-6-8 6-12 0-20s6-12 0-20"/></svg>
+          <span>Зерно додому</span>
+          <svg class="marquee__steam" viewBox="0 0 40 48"><path d="M10 44c-6-8 6-12 0-20s6-12 0-20M22 44c-6-8 6-12 0-20s6-12 0-20M34 44c-6-8 6-12 0-20s6-12 0-20"/></svg>
+          <span>Тепла кераміка</span>
+          <svg class="marquee__steam" viewBox="0 0 40 48"><path d="M10 44c-6-8 6-12 0-20s6-12 0-20M22 44c-6-8 6-12 0-20s6-12 0-20M34 44c-6-8 6-12 0-20s6-12 0-20"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ ПРО НАС ============ -->
+    <section class="about" id="about">
+      <div class="wrap">
+        <h2 class="h2" data-heading>Смажимо за стіною, варимо при вас</h2>
+
+        <div class="about__grid">
+          <p class="about__statement" data-words>«Пара» — невелика кав’ярня з власним ростером на Січеславській набережній. Щочетверга смажимо свіжу партію, у п’ятницю вона вже в кавомолці. Ви п’єте каву, якій від сили тиждень, і дивитесь, як над Дніпром розходиться туман.</p>
+
+          <figure class="about__photo about__photo--bar reveal-img">
+            <img src="assets/img/about-bar.webp" width="1600" height="1000" loading="lazy" alt="Барна стійка кав’ярні: еспресо-машина, кавомолки, полиці з посудом і підвісні лампи">
+          </figure>
+
+          <div class="about__text">
+            <p>Ми відкрилися у 2019-му з однією кавомашиною і ростером на кілограм. Тепер ростер більший, а принцип той самий: купуємо зерно невеликими лотами, смажимо самі й не тримаємо його на полиці довше трьох тижнів.</p>
+            <p>За стійкою — четверо бариста. Розкажуть, чим мита Ефіопія відрізняється від натуральної, але тільки якщо спитаєте.</p>
+          </div>
+
+          <figure class="about__photo about__photo--barista reveal-img">
+            <img src="assets/img/about-barista.webp" width="900" height="1200" loading="lazy" alt="Бариста заварює фільтр-каву: ллє воду з чайника у воронку">
+          </figure>
+        </div>
+
+        <!-- TODO: заменить цифры на реальные -->
+        <dl class="stats">
+          <div class="stat"><dd><span data-count="7">7</span></dd><dt>років на набережній</dt></div>
+          <div class="stat"><dd><span data-count="12">12</span></dd><dt>сортів зерна на полиці</dt></div>
+          <div class="stat"><dd><span data-count="340">340</span></dd><dt>чашок за звичайний день</dt></div>
+          <div class="stat"><dd><span data-count="60">60</span> кг</dd><dt>смажимо щотижня</dt></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ============ ПРОЦЕС (запиненная секция) ============ -->
+    <section class="process theme-dark" id="process" data-cursor="Скроль">
+      <div class="process__stage">
+        <div class="wrap process__wrap">
+          <h2 class="h2 process__title" data-heading>Від ягоди до чашки</h2>
+
+          <ol class="steps">
+            <li class="step">
+              <div class="step__text">
+                <span class="step__num" aria-hidden="true">1</span>
+                <h3 class="h3">Ягода</h3>
+                <p>Кава — це кісточка червоної ягоди. Купуємо зелене зерно невеликими лотами з Ефіопії, Колумбії та Руанди. Кожен мішок — із конкретної ферми, її назва є на пакеті.</p>
+              </div>
+              <figure class="step__media">
+                <img src="assets/img/step-berry.webp" width="1000" height="1250" loading="lazy" alt="Гілка кавового дерева з червоними та зеленими ягодами">
+              </figure>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <span class="step__num" aria-hidden="true">2</span>
+                <h3 class="h3">Обсмаження</h3>
+                <p>Щочетверга о сьомій ранку вмикаємо ростер. Світле обсмаження для фільтра, середнє для еспресо. Темного не робимо — воно ховає смак зерна.</p>
+              </div>
+              <figure class="step__media">
+                <img src="assets/img/step-roast.webp" width="1000" height="1250" loading="lazy" alt="Щойно обсмажене зерно остигає в охолоджувачі ростера">
+              </figure>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <span class="step__num" aria-hidden="true">3</span>
+                <h3 class="h3">Екстракція</h3>
+                <p>Помел налаштовуємо щоранку: 18 грамів кави, 36 грамів еспресо, 27 секунд. Якщо шот не влучив — виливаємо й робимо новий.</p>
+              </div>
+              <figure class="step__media">
+                <img src="assets/img/step-brew.webp" width="1000" height="1250" loading="lazy" alt="Еспресо тече з холдера в білу чашку">
+              </figure>
+            </li>
+            <li class="step">
+              <div class="step__text">
+                <span class="step__num" aria-hidden="true">4</span>
+                <h3 class="h3">Чашка</h3>
+                <p>Подаємо в теплій кераміці, яку ліплять у дніпровській майстерні. Перший ковток — поки над чашкою ще стоїть пара.</p>
+              </div>
+              <figure class="step__media">
+                <img src="assets/img/step-cup.webp" width="1000" height="1250" loading="lazy" alt="Чашка еспресо з кремою на блюдці, вид згори">
+              </figure>
+            </li>
+          </ol>
+
+          <div class="process__progress" aria-hidden="true"><span class="process__bar"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ МЕНЮ ============ -->
+    <section class="menu theme-paper" id="menu">
+      <div class="wrap">
+        <div class="menu__head">
+          <h2 class="h2" data-heading>Меню</h2>
+          <p class="menu__intro">Ціни в гривнях. Рослинне молоко — вівсяне або мигдалеве, +20 ₴. Будь-який напій зробимо з собою.</p>
+        </div>
+
+        <!-- TODO: заменить позиции и цены на реальные -->
+        <div class="menu__grid">
+          <section class="menu__group" aria-labelledby="m-espresso">
+            <h3 class="h3" id="m-espresso">Еспресо-бар</h3>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__row"><span class="dish__name">Еспресо</span><span class="dish__price">55</span></div><p class="dish__note">Суміш «Набережна»: Бразилія та Ефіопія</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Американо</span><span class="dish__price">60</span></div></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Капучино</span><span class="dish__price">80</span></div><p class="dish__note">250 мл, подвійний шот</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Флет вайт</span><span class="dish__price">90</span></div></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Лате</span><span class="dish__price">90</span></div></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Раф цитрусовий</span><span class="dish__price">110</span></div><p class="dish__note">Вершки, апельсинова цедра, без сиропу</p></li>
+            </ul>
+          </section>
+
+          <section class="menu__group" aria-labelledby="m-filter">
+            <h3 class="h3" id="m-filter">Фільтр</h3>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__row"><span class="dish__name">Фільтр дня</span><span class="dish__price">70</span></div><p class="dish__note">Сорт змінюємо щоранку, спитайте в бариста</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">V60</span><span class="dish__price">120</span></div><p class="dish__note">Ефіопія Гуджі: чорниця, бергамот</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Аеропрес</span><span class="dish__price">110</span></div><p class="dish__note">Колумбія Уїла: карамель, червоне яблуко</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Колд брю</span><span class="dish__price">95</span></div><p class="dish__note">Настоюємо 16 годин</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Какао</span><span class="dish__price">100</span></div><p class="dish__note">На вівсяному молоці, з дрібкою солі</p></li>
+            </ul>
+          </section>
+
+          <section class="menu__group" aria-labelledby="m-food">
+            <h3 class="h3" id="m-food">До кави</h3>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__row"><span class="dish__name">Круасан масляний</span><span class="dish__price">75</span></div><p class="dish__note">Печемо зранку, до обіду зазвичай розбирають</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Равлик із корицею</span><span class="dish__price">85</span></div></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Сирник запечений</span><span class="dish__price">95</span></div><p class="dish__note">Зі сметаною та вишневим варенням</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Банановий хліб</span><span class="dish__price">70</span></div></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Тост із бринзою</span><span class="dish__price">130</span></div><p class="dish__note">Хліб на заквасці, томати, зелена олія</p></li>
+            </ul>
+          </section>
+
+          <section class="menu__group" aria-labelledby="m-beans">
+            <h3 class="h3" id="m-beans">Зерно додому, 250 г</h3>
+            <ul class="dishes">
+              <li class="dish"><div class="dish__row"><span class="dish__name">Ефіопія Гуджі</span><span class="dish__price">420</span></div><p class="dish__note">Натуральна обробка, під фільтр</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Колумбія Уїла</span><span class="dish__price">380</span></div><p class="dish__note">Мита обробка, під фільтр і турку</p></li>
+              <li class="dish"><div class="dish__row"><span class="dish__name">Суміш «Набережна»</span><span class="dish__price">340</span></div><p class="dish__note">Під еспресо. Змелемо під вашу кавоварку</p></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ГАЛЕРЕЯ (горизонтальный скролл) ============ -->
+    <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="gallery__track" data-cursor="Гортай">
+        <div class="gallery__intro">
+          <h2 class="h2" id="gallery-title">Як у нас</h2>
+          <p>Ростер гуде в кутку, біля вікна — шість столиків із видом на річку.</p>
+        </div>
+
+        <figure class="shot shot--tall">
+          <div class="shot__frame"><img src="assets/img/g-roaster.webp" width="1000" height="1250" loading="lazy" alt="Великий ростер для кави посеред зали кав’ярні"></div>
+          <figcaption>Ростер працює щочетверга з сьомої ранку</figcaption>
+        </figure>
+        <figure class="shot shot--wide">
+          <div class="shot__frame"><img src="assets/img/g-hall.webp" width="1500" height="1000" loading="lazy" alt="Зала кав’ярні з довгими дерев’яними столами та гостями"></div>
+          <figcaption>Довгий стіл — для тих, хто з ноутбуком</figcaption>
+        </figure>
+        <figure class="shot shot--tall">
+          <div class="shot__frame"><img src="assets/img/g-dripper.webp" width="1000" height="1250" loading="lazy" alt="Керамічна воронка на скляному сервері, над нею здіймається пара"></div>
+          <figcaption>V60: три хвилини, і можна наливати</figcaption>
+        </figure>
+        <figure class="shot shot--wide">
+          <div class="shot__frame"><img src="assets/img/g-cooling.webp" width="1500" height="1000" loading="lazy" alt="Обсмажене зерно висипається з ростера в охолоджувач"></div>
+          <figcaption>Після обсмаження зерно остигає чотири хвилини</figcaption>
+        </figure>
+        <figure class="shot shot--tall">
+          <div class="shot__frame"><img src="assets/img/g-cappuccino.webp" width="1000" height="1250" loading="lazy" alt="Капучино з лате-артом і круасан на дерев’яному столі"></div>
+          <figcaption>Капучино і круасан — найчастіше замовлення зранку</figcaption>
+        </figure>
+        <figure class="shot shot--square">
+          <div class="shot__frame"><img src="assets/img/g-croissant.webp" width="1100" height="1100" loading="lazy" alt="Два масляні круасани на тарілці поруч зі склянкою молока"></div>
+          <figcaption>Круасани печемо самі</figcaption>
+        </figure>
+        <figure class="shot shot--tall">
+          <div class="shot__frame"><img src="assets/img/g-espresso.webp" width="1000" height="1250" loading="lazy" alt="Склянка еспресо на блюдці на дерев’яній стійці"></div>
+          <figcaption>Еспресо подаємо зі склянкою води</figcaption>
+        </figure>
+
+        <div class="gallery__outro">
+          <p class="h3">Столик біля вікна краще притримати заздалегідь</p>
+          <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати"><span>Забронювати в Telegram</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ВІДГУКИ (карточки прилипают стопкой) ============ -->
+    <section class="reviews theme-dark" id="reviews">
+      <div class="wrap reviews__wrap">
+        <h2 class="h2" data-heading>Кажуть гості</h2>
+
+        <!-- TODO: заменить на настоящие отзывы гостей -->
+        <div class="reviews__stack">
+          <figure class="review review--crema">
+            <blockquote><p>Заходжу перед роботою вже третій рік. Бариста пам’ятає, що мені флет на вівсяному, і встигає зробити, поки я паркую велосипед.</p></blockquote>
+            <figcaption><span class="review__name">Олена К.</span><span class="review__meta">приходить щоранку о 8:15</span></figcaption>
+          </figure>
+          <figure class="review review--mist">
+            <blockquote><p>Єдине місце в Дніпрі, де мені пояснили різницю між митою та натуральною обробкою і не зробили з цього лекцію. Беру зерно додому щомісяця.</p></blockquote>
+            <figcaption><span class="review__name">Максим Д.</span><span class="review__meta">купує Колумбію під аеропрес</span></figcaption>
+          </figure>
+          <figure class="review review--cherry">
+            <blockquote><p>Сирник запечений — небезпечна штука. Прийшла на каву, залишилась на дві години з ноутбуком і другим сирником.</p></blockquote>
+            <figcaption><span class="review__name">Ірина С.</span><span class="review__meta">працює за довгим столом</span></figcaption>
+          </figure>
+          <figure class="review review--steam">
+            <blockquote><p>V60 з Ефіопії справді пахне чорницею. Думав, що це маркетинг, поки не спробував. Тепер воджу сюди всіх гостей міста.</p></blockquote>
+            <figcaption><span class="review__name">Андрій П.</span><span class="review__meta">п’є тільки фільтр</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ КОНТАКТИ ============ -->
+    <section class="contacts" id="contacts">
+      <div class="wrap contacts__grid">
+        <div class="contacts__info">
+          <h2 class="h2" data-heading>Заходьте</h2>
+
+          <!-- TODO: заменить адрес, часы, телефон и ссылки -->
+          <ul class="contacts__list">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><strong>Січеславська набережна, 29</strong><br>Дніпро, вхід із боку річки</div>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <div><strong>пн–пт 7:30–21:00</strong><br>сб–нд 9:00–22:00</div>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <div><a class="link" href="tel:+380670000000" data-cursor="Подзвонити"><strong>067 000 00 00</strong></a><br>відповідаємо в робочі години</div>
+            </li>
+          </ul>
+
+          <div class="contacts__actions">
+            <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+              <span>Написати в Telegram</span>
+            </a>
+            <p class="contacts__hint">Притримаємо столик або відкладемо пакет зерна — відповідаємо за кілька хвилин.</p>
+          </div>
+        </div>
+
+        <div class="contacts__map" data-cursor="Мапа">
+          <!-- TODO: заменить координаты на точные -->
+          <iframe title="Кав’ярня «Пара» на мапі Дніпра" loading="lazy" referrerpolicy="no-referrer"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=35.0390%2C48.4650%2C35.0640%2C48.4770&amp;layer=mapnik&amp;marker=48.4712%2C35.0513"></iframe>
+          <a class="link contacts__maplink" href="https://www.openstreetmap.org/?mlat=48.4712&amp;mlon=35.0513#map=16/48.4712/35.0513" target="_blank" rel="noopener">Відкрити велику мапу</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ ФУТЕР ============ -->
+  <footer class="footer theme-dark">
+    <div class="wrap">
+      <div class="footer__top">
+        <ul class="footer__nav">
+          <li><a href="#about">Про нас</a></li>
+          <li><a href="#process">Процес</a></li>
+          <li><a href="#menu">Меню</a></li>
+          <li><a href="#gallery">Галерея</a></li>
+          <li><a href="#reviews">Відгуки</a></li>
+          <li><a href="#contacts">Контакти</a></li>
+        </ul>
+        <button class="motion-toggle" type="button" aria-pressed="false">
+          <svg class="icon icon--pause" viewBox="0 0 24 24" aria-hidden="true"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
+          <svg class="icon icon--play" viewBox="0 0 24 24" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          <span class="motion-toggle__text">Вимкнути анімації</span>
+        </button>
+      </div>
+
+      <p class="footer__word" aria-hidden="true"><span class="footer__char">П</span><span class="footer__char">а</span><span class="footer__char">р</span><span class="footer__char">а</span></p>
+
+      <div class="footer__bottom">
+        <p>© 2026 Кав’ярня «Пара», Дніпро</p>
+        <p>Фото: Unsplash. <a class="link" href="CREDITS.md">Автори та ліцензії</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Плавающая кнопка главного действия -->
+  <a class="fab" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" aria-label="Написати в Telegram" data-magnetic data-cursor="Написати">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
+  </a>
+</body>
+</html>

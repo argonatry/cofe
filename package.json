@@ -1,0 +1,17 @@
+{
+  "name": "cofe",
+  "version": "1.0.0",
+  "description": "Лендинг кав'ярні «Пара»",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "private": "true",
+  "devDependencies": {
+    "playwright": "^1.65.0"
+  }
+}
