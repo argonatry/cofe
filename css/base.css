@@ -157,47 +157,6 @@ section, header, footer, .marquee { background: var(--bg); color: var(--fg); }
 .reveal-img { overflow: hidden; }
 .reveal-img img { width: 100%; height: 100%; object-fit: cover; }
 
-/* ---------- Кастомный курсор ---------- */
-.cursor { display: none; }
-.has-cursor .cursor {
-  display: block;
-  position: fixed;
-  left: 0; top: 0;
-  z-index: 150;
-  pointer-events: none;
-}
-.cursor__dot {
-  position: absolute;
-  left: -6px; top: -6px;
-  width: 12px; height: 12px;
-  border-radius: 50%;
-  background: var(--cherry);
-  transition: transform 0.3s var(--ease-out), opacity 0.3s;
-}
-.cursor__label {
-  position: absolute;
-  left: 14px; top: 14px;
-  padding: 0.35em 0.9em 0.4em;
-  border-radius: 999px;
-  background: var(--cherry);
-  color: var(--steam);
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  opacity: 0;
-  transform: scale(0.4);
-  transform-origin: 0 0;
-  transition: transform 0.35s var(--ease-out), opacity 0.2s;
-}
-.cursor.has-label .cursor__label { opacity: 1; transform: none; }
-.cursor.has-label .cursor__dot { transform: scale(0.5); }
-.cursor.is-link .cursor__dot { transform: scale(2.2); opacity: 0.55; }
-.cursor.is-hidden { opacity: 0; }
-
 /* ---------- Прелоадер ---------- */
 .preloader { display: none; }
 .js:not(.reduced):not(.is-loaded) .preloader {

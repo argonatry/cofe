@@ -349,46 +349,6 @@
 .is-horizontal .gallery__intro { width: 34rem; }
 .is-horizontal .gallery__outro { padding-right: calc(var(--gutter) + 6vw); }
 
-/* ============ ВІДГУКИ ============ */
-.reviews { padding-block: var(--s-6); }
-.reviews__stack { display: grid; gap: var(--s-4); margin-top: var(--s-5); padding-bottom: var(--s-4); }
-.review {
-  --i: 0;
-  position: sticky;
-  top: calc(11svh + var(--i) * 1.1rem);
-  display: grid;
-  gap: var(--s-4);
-  align-content: space-between;
-  min-height: min(27rem, 58svh);
-  padding: clamp(1.5rem, 4vw, 3.5rem);
-  border-radius: 6px;
-  color: var(--ink);
-  transform-origin: 50% 0;
-}
-.review:nth-child(2) { --i: 1; }
-.review:nth-child(3) { --i: 2; }
-.review:nth-child(4) { --i: 3; }
-.review--crema { background: var(--crema); }
-.review--mist { background: var(--mist); }
-.review--cherry { background: var(--cherry); color: var(--steam); }
-.review--steam { background: var(--steam); }
-.review blockquote p {
-  max-width: 26em;
-  font-size: var(--fs-statement);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  text-wrap: pretty;
-}
-.review figcaption { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.2em 1em; }
-.review__name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--fs-ui);
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-.review__meta { font-size: var(--fs-small); font-style: italic; opacity: 0.75; }
-
 /* ============ КОНТАКТИ ============ */
 .contacts { padding-block: var(--s-6); }
 .contacts__grid { display: grid; gap: var(--s-5); }

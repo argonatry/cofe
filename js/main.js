@@ -7,11 +7,10 @@ import { initAbout } from './anim/about.js';
 import { initProcess } from './anim/process.js';
 import { initMenu } from './anim/menu.js';
 import { initGallery } from './anim/gallery.js';
-import { initReviews } from './anim/reviews.js';
 import { initContacts } from './anim/contacts.js';
 import { initFooter } from './anim/footer.js';
 import { initHeadings } from './anim/headings.js';
-import { initCursor } from './cursor.js';
+import { initMagnetic } from './magnetic.js';
 
 const html = document.documentElement;
 const MOTION_KEY = 'para-motion';
@@ -137,10 +136,9 @@ async function boot() {
         initProcess(env),
         initMenu(env),
         initGallery(env),
-        initReviews(env),
         initContacts(env),
         initFooter(env),
-        c.fine ? initCursor() : null,
+        c.fine ? initMagnetic() : null,
       );
 
       return () => cleanups.forEach((fn) => fn && fn());

@@ -61,9 +61,6 @@
     </div>
   </div>
 
-  <!-- Кастомный курсор (включается только для мыши) -->
-  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__label"></span></div>
-
   <!-- ============ HERO ============ -->
   <header class="hero theme-dark" id="top">
     <canvas class="hero__steam" aria-hidden="true"></canvas>
@@ -75,11 +72,10 @@
         <li><a href="#process">Процес</a></li>
         <li><a href="#menu">Меню</a></li>
         <li><a href="#gallery">Галерея</a></li>
-        <li><a href="#reviews">Відгуки</a></li>
         <li><a href="#contacts">Контакти</a></li>
       </ul>
       <!-- TODO: заменить ссылку на настоящий Telegram -->
-      <a class="nav__cta" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати">Telegram</a>
+      <a class="nav__cta" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic>Telegram</a>
     </nav>
 
     <div class="hero__body">
@@ -91,12 +87,12 @@
       <div class="hero__side">
         <p class="hero__lead">Кав’ярня з власною обсмажувальнею на набережній Дніпра. Смажимо зерно щочетверга, варимо щодня з 7:30.</p>
         <div class="hero__actions">
-          <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати">
+          <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic>
             <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
             <span>Написати в Telegram</span>
           </a>
           <!-- TODO: заменить телефон -->
-          <a class="link" href="tel:+380670000000" data-cursor="Подзвонити">Подзвонити: 067 000 00 00</a>
+          <a class="link" href="tel:+380670000000">Подзвонити: 067 000 00 00</a>
         </div>
       </div>
     </div>
@@ -158,7 +154,7 @@
     </section>
 
     <!-- ============ ПРОЦЕС (запиненная секция) ============ -->
-    <section class="process theme-dark" id="process" data-cursor="Скроль">
+    <section class="process theme-dark" id="process">
       <div class="process__stage">
         <div class="wrap process__wrap">
           <h2 class="h2 process__title" data-heading>Від ягоди до чашки</h2>
@@ -269,7 +265,7 @@
 
     <!-- ============ ГАЛЕРЕЯ (горизонтальный скролл) ============ -->
     <section class="gallery" id="gallery" aria-labelledby="gallery-title">
-      <div class="gallery__track" data-cursor="Гортай">
+      <div class="gallery__track">
         <div class="gallery__intro">
           <h2 class="h2" id="gallery-title">Як у нас</h2>
           <p>Ростер гуде в кутку, біля вікна — шість столиків із видом на річку.</p>
@@ -306,34 +302,7 @@
 
         <div class="gallery__outro">
           <p class="h3">Столик біля вікна краще притримати заздалегідь</p>
-          <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати"><span>Забронювати в Telegram</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ ВІДГУКИ (карточки прилипают стопкой) ============ -->
-    <section class="reviews theme-dark" id="reviews">
-      <div class="wrap reviews__wrap">
-        <h2 class="h2" data-heading>Кажуть гості</h2>
-
-        <!-- TODO: заменить на настоящие отзывы гостей -->
-        <div class="reviews__stack">
-          <figure class="review review--crema">
-            <blockquote><p>Заходжу перед роботою вже третій рік. Бариста пам’ятає, що мені флет на вівсяному, і встигає зробити, поки я паркую велосипед.</p></blockquote>
-            <figcaption><span class="review__name">Олена К.</span><span class="review__meta">приходить щоранку о 8:15</span></figcaption>
-          </figure>
-          <figure class="review review--mist">
-            <blockquote><p>Єдине місце в Дніпрі, де мені пояснили різницю між митою та натуральною обробкою і не зробили з цього лекцію. Беру зерно додому щомісяця.</p></blockquote>
-            <figcaption><span class="review__name">Максим Д.</span><span class="review__meta">купує Колумбію під аеропрес</span></figcaption>
-          </figure>
-          <figure class="review review--cherry">
-            <blockquote><p>Сирник запечений — небезпечна штука. Прийшла на каву, залишилась на дві години з ноутбуком і другим сирником.</p></blockquote>
-            <figcaption><span class="review__name">Ірина С.</span><span class="review__meta">працює за довгим столом</span></figcaption>
-          </figure>
-          <figure class="review review--steam">
-            <blockquote><p>V60 з Ефіопії справді пахне чорницею. Думав, що це маркетинг, поки не спробував. Тепер воджу сюди всіх гостей міста.</p></blockquote>
-            <figcaption><span class="review__name">Андрій П.</span><span class="review__meta">п’є тільки фільтр</span></figcaption>
-          </figure>
+          <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic><span>Забронювати в Telegram</span></a>
         </div>
       </div>
     </section>
@@ -356,12 +325,12 @@
             </li>
             <li>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              <div><a class="link" href="tel:+380670000000" data-cursor="Подзвонити"><strong>067 000 00 00</strong></a><br>відповідаємо в робочі години</div>
+              <div><a class="link" href="tel:+380670000000"><strong>067 000 00 00</strong></a><br>відповідаємо в робочі години</div>
             </li>
           </ul>
 
           <div class="contacts__actions">
-            <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic data-cursor="Написати">
+            <a class="btn" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" data-magnetic>
               <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
               <span>Написати в Telegram</span>
             </a>
@@ -369,7 +338,7 @@
           </div>
         </div>
 
-        <div class="contacts__map" data-cursor="Мапа">
+        <div class="contacts__map">
           <!-- TODO: заменить координаты на точные -->
           <iframe title="Кав’ярня «Пара» на мапі Дніпра" loading="lazy" referrerpolicy="no-referrer"
             src="https://www.openstreetmap.org/export/embed.html?bbox=35.0390%2C48.4650%2C35.0640%2C48.4770&amp;layer=mapnik&amp;marker=48.4712%2C35.0513"></iframe>
@@ -388,7 +357,6 @@
           <li><a href="#process">Процес</a></li>
           <li><a href="#menu">Меню</a></li>
           <li><a href="#gallery">Галерея</a></li>
-          <li><a href="#reviews">Відгуки</a></li>
           <li><a href="#contacts">Контакти</a></li>
         </ul>
         <button class="motion-toggle" type="button" aria-pressed="false">
@@ -408,7 +376,7 @@
   </footer>
 
   <!-- Плавающая кнопка главного действия -->
-  <a class="fab" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" aria-label="Написати в Telegram" data-magnetic data-cursor="Написати">
+  <a class="fab" href="https://t.me/para_coffee_demo" target="_blank" rel="noopener" aria-label="Написати в Telegram" data-magnetic>
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"/><path d="m21.854 2.147-10.94 10.939"/></svg>
   </a>
 </body>

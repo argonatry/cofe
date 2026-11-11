@@ -1,7 +1,7 @@
 # Пара — лендинг кав'ярні
 
 Одностраничный сайт кофейни-обжарочной «Пара» (Днепр) с анимациями: чистый HTML + CSS + JS, без сборщика.
-GSAP + ScrollTrigger + SplitText и Lenis подключены с CDN. Название, адрес, телефон, цены и отзывы — заглушки
+GSAP + ScrollTrigger + SplitText и Lenis подключены с CDN. Название, адрес, телефон и цены — заглушки
 (в `index.html` помечены `<!-- TODO -->`).
 
 ## Запуск
@@ -26,5 +26,5 @@ node scripts/shots.mjs           # сервер должен быть запущ
 ## Структура
 - `index.html` — вся разметка и тексты
 - `css/tokens.css` — цвета, шрифты, размеры; `css/base.css` — общее; `css/sections.css` — секции
-- `js/main.js` — точка входа; `js/anim/*.js` — по файлу на секцию; `js/cursor.js` — курсор и магнитные кнопки
+- `js/main.js` — точка входа; `js/anim/*.js` — по файлу на секцию; `js/magnetic.js` — магнитные кнопки
 - `assets/img/` — фото в WebP; источники — в `CREDITS.md`
